@@ -5,6 +5,7 @@ on:
 
 jobs:
   CI:
+    name: ci-flow
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -14,6 +15,11 @@ jobs:
         node-version: 14.x
     - run: npm install
     - run: npm run coverage
+    - name: SonarCloud Scan
+      uses: SonarSource/sonarcloud-github-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
     # - name: Docker Login
       # uses: docker/login-action@v1.10.0
