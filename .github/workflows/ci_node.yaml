@@ -13,7 +13,7 @@ jobs:
       with:
         node-version: 14.x
     - run: npm install --prefix src
-    - run: npm run --prefix src/test
+    - run: npm run --prefix src/coverage
 
     # - name: Docker Login
       # uses: docker/login-action@v1.10.0
