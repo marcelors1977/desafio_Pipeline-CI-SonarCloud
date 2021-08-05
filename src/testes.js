@@ -7,7 +7,7 @@ const obj = new Objetivos()
 
 describe("Testes automatizados da aplicação de lista de tarefas", function() {
     it("Sobre a classe Objetivos - testar se listagem vazia de tarefas está realmente vazia", function() {
-        assert.strictEqual(obj.listar().length, 1)
+        assert.strictEqual(obj.listar().length, 0)
     })
 
     it("Sobre a classe Objetivos - testar adição de nova tarefa na lista a ser executada", function() {
