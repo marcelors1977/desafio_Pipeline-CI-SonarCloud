@@ -31,7 +31,7 @@ jobs:
     - name: Build, push and run Node APP
       uses: docker/build-push-action@v2.6.1
       with:
-        context: ./src
-        file: ./src/Dockerfile
+        context: ./
+        file: ./Dockerfile
         push: true
         tags: 19061977/tarefas_app:latest
