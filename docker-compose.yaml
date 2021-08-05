@@ -1,0 +1,12 @@
+version: '3'
+
+services: 
+
+  app:
+    container_name: tarefas_app
+    image: 19061977/tarefas_app:latest
+    command: node index.js
+    # command: npm run test 
+    # command: tail -f /dev/null
+    volumes: 
+      - ./:/usr/src/app
