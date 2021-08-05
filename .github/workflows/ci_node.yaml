@@ -1,7 +1,7 @@
 name: Node.js CI
 on:
   pull_request:
-    branches: [ developer ]
+    branches: [ main, developer ]
 
 jobs:
   CI:
@@ -9,28 +9,29 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+
     - name: Use Node.js 14.x
       uses: actions/setup-node@v1
       with:
         node-version: 14.x
     - run: npm install
     - run: npm run coverage
+
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
-    # - name: Docker Login
-      # uses: docker/login-action@v1.10.0
-      # with:
-        # password: ${{ secrets.DOCKERHUB_PWD }}
-        # username: ${{ secrets.DOCKERHUB_USER }}
-    # - name: Build, push and run Node APP
-      # uses: docker/build-push-action@v2.6.1
-      # with:
-        # context: ./src
-        # file: ./src/Dockerfile
-        # push: true
-        # tags: 19061977/tarefas_app:latest
- 
+    - name: Docker Login
+      uses: docker/login-action@v1.10.0
+      with:
+        password: ${{ secrets.DOCKERHUB_PWD }}
+        username: ${{ secrets.DOCKERHUB_USER }}
+    - name: Build, push and run Node APP
+      uses: docker/build-push-action@v2.6.1
+      with:
+        context: ./
+        file: ./Dockerfile
+        push: true
+        tags: 19061977/tarefas_app:latest
