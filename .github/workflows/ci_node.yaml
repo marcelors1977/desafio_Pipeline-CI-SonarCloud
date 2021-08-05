@@ -8,13 +8,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js 14-alpine
+    - name: Use Node.js 14.x
       uses: actions/setup-node@v1
       with:
-        node-version: 14-alpine
+        node-version: 14.x
     - run: npm install
     - run: npm test
-    
+
     # - name: Docker Login
       # uses: docker/login-action@v1.10.0
       # with:
