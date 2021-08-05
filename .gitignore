@@ -1,6 +1,10 @@
 src/node_modules/
+node_modules/
 src/.nyc_output/
 src/coverage/
+.nyc_output/
+coverage/
 .dockerignore
 sonar/
 .scannerwork/
+docker-compose.yaml

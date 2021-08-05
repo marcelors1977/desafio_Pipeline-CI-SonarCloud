@@ -16,3 +16,5 @@ Abaixo está descriminado os passos efetuados para a entrega deste desafio:
             3.6 - "Sobre processos util.js - testar execução conclusão de todas as tarefasda lista de objetivos"
 
     4 - através do comando "npm run coverage" é gerado o arquivo lcov.info usando pelo sonar-scanner carregar a cobertura de código no sonarqube;
+
+    5 - criado workflow no Github para executar os testes unitários, efetuar a cobertura de código no SonarCloud e efetuar o "build and push" da imagem docker da aplicação no DockerHub.
