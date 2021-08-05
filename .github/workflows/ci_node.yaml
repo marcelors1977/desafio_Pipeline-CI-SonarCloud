@@ -12,8 +12,8 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 14.x
-    - run: npm install --prefix project src
-    - run: npm run test
+    - run: npm install --prefix src
+    - run: npm run --prefix src/test
 
     # - name: Docker Login
       # uses: docker/login-action@v1.10.0
