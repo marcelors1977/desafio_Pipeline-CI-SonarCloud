@@ -16,7 +16,7 @@ jobs:
         node-version: 14.x
     - run: npm install
     - run: npm run coverage
-    
+
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@master
       env:
@@ -35,4 +35,3 @@ jobs:
         file: ./src/Dockerfile
         push: true
         tags: 19061977/tarefas_app:latest
- 
