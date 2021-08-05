@@ -1,6 +1,6 @@
 const Objetivos = require("./objetivos")
 const util = require("./util")
-const index = require("./index")
+// const index = require("./index")
 const assert = require('assert').strict
 
 const obj = new Objetivos()
